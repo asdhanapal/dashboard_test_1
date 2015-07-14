@@ -1,0 +1,78 @@
+{
+"chart": {
+        "zoomType": "xy",
+        "type": "column",
+        "renderTo": "loading_user_data"
+},
+"title": {
+        "text": "Report between 2015-02-01 and 2015-02-28"
+},
+"subtitle": {
+        "text": "Sub title goes here"
+},
+    "xAxis": [{
+        "categories":["Audit","Clarification - external","Clarification - internal","FF","Moire Issue Books","YJLR","JIRA to TC Conversion","Meeting","Others","AD-HOC Testing (scenarios)","HS Camera - Books Count","QA Verify","Report Consolidation","Sync up","Test Run","Weekly report"],
+        "crosshair": "true"
+    }],
+    "yAxis": [
+    { 
+        "labels": {
+            "format": "{value}",
+            "style": {
+                "color": "Highcharts.getOptions().colors[1]"
+            }
+        },
+        "title": {
+            "text": "Work Units (in %)",
+            "style": {
+                "color": "Highcharts.getOptions().colors[1]"
+            }
+        },
+        "max":"500"
+    }, { 
+        "title": {
+            "text": "Work Units (in %)",
+            "style": {
+                "color": "Highcharts.getOptions().colors[0]"
+            }
+        },
+        "labels": {
+            "format": "{value}",
+            "style": {
+                "color": "Highcharts.getOptions().colors[0]"
+            }
+        },
+        "opposite": "true",
+        "max":"500"
+        
+    }],
+    "tooltip": {
+        "shared": "true"
+    },
+    "legend": {
+        "layout": "vertical",
+        "align": "left",
+        "x": "0",
+        "verticalAlign": "top",
+        "y": 0,
+        "floating": true
+        
+    },
+    "series": [{
+        "name": "Actual",
+        "type": "column",
+        "yAxis": 1,
+        "data": ['NULL','NULL','NULL',104.55,139.18,71.04,4000,'NULL','NULL',443.08,97.16,419.4,'NULL','NULL',611.8,'NULL'],
+        "tooltip": {
+            "valueSuffix": " %"
+        }
+
+    }, {
+        "name": "Target",
+        "type": "spline",
+        "data": ['NULL','NULL','NULL',100,100,100,100,'NULL','NULL',100,100,100,'NULL','NULL',100,'NULL'],
+        "tooltip": {
+            "valueSuffix": " %"
+        }
+    }]
+}
