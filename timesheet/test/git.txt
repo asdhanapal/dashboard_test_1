@@ -1,0 +1,10 @@
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\p2ropsdashboard>git clone ssh://dhanapas@git.amazon.com:2222/pkg/P2ROpsDashbo
+ard
+'git' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\p2ropsdashboard>git clone ssh://dhanapas@git.amazon.com:2222/pkg/P2ROpsDashbo
+ard

@@ -1,0 +1,80 @@
+//  Updating the non- CF entries
+//    $query_4="SELECT s_no,team,task,sub_task FROM amz_daily_target WHERE month_from='$month' AND about_cf IS NULL AND cf_updated=1";
+//    $result_4 = $conn->runsql($query_4, $dbcon);
+//    while ($result_row_4 = mysqli_fetch_object($result_4))
+//    {
+//        $team_id=$result_row_4->team;
+//        $task_id=$result_row_4->task;
+//        $sub_task_id=$result_row_4->sub_task;
+//        $s_no=$result_row_4->s_no;
+//        $month_modiified_struct_1=date("Y-m",  strtotime($month));
+//        $query_5="UPDATE user_tasks SET wu_status=1 WHERE team_id='$team_id' AND tasks_id='$task_id' AND sub_task_id='$sub_task_id' AND date LIKE '%$month_modiified_struct_1%' AND wu_status='0' ";
+//        $result_5 = $conn->runsql($query_5, $dbcon);
+//
+////      Updating the OT entries
+//         $query_100="UPDATE user_tasks_ot SET wu_status=1 WHERE team_id='$team_id' AND tasks_id='$task_id' AND sub_task_id='$sub_task_id' AND date LIKE '%$month_modiified_struct_1%' AND wu_status='0' AND ot_status=1";
+//        $result_100 = $conn->runsql($query_100, $dbcon);
+//
+//        $query_update_con_fac_100="Update amz_daily_target SET wu_status=1 where s_no='$s_no'";
+//        $result_update_con_fac_100 = $conn->runsql($query_update_con_fac_100, $dbcon);
+//        if(!$result_5 || !$result_update_con_fac_100 || !$result_100)
+//        {
+//            $query_fail=mysqli_real_escape_string($dbcon,$query_5."+".$query_update_con_fac_100."+".$query_100);
+//            echo "<br>1.".$fail_query="INSERT INTO amz_failed_quries(query) VALUES('$query_fail')";
+//            $conn->runsql($fail_query, $dbcon);
+//        }
+//    }
+
+//  Updating the Auto-CF entries
+//  Get the auto cf wu for a min.
+//    $month_modiified_struct_2=date("Y-m",  strtotime($month));
+//    $query_6="SELECT s_no,team,task,sub_task FROM amz_daily_target WHERE month_from='$month' AND about_cf=0 AND cf_updated=1";
+//    $result_6 = $conn->runsql($query_6, $dbcon);
+//    while ($result_row_6 = mysqli_fetch_object($result_6))
+//    {
+////      print_r($result_row_6);
+//        $s_no_1=$result_row_6->s_no;
+//        $team_id=$result_row_6->team;
+//        $task_id=$result_row_6->task;
+//        $sub_task_id=$result_row_6->sub_task;
+//        if($sub_task_id!="")
+//        {
+//            $query_7="UPDATE user_tasks SET wu_status='1' WHERE team_id='$team_id' AND tasks_id='$task_id' AND sub_task_id='$sub_task_id' AND date LIKE '%$month_modiified_struct_2%' AND wu_status='0'";
+//        }
+//        else
+//        {
+//            $query_7="UPDATE user_tasks SET wu_status='1' WHERE team_id='$team_id' AND tasks_id='$task_id' AND sub_task_id IS NULL AND date LIKE '%$month_modiified_struct_2%' AND wu_status='0'";
+//        }
+//        $result_update_auto_cf_1 = $conn->runsql($query_7, $dbcon);
+//        if(!$result_update_auto_cf_1)
+//        {
+//            $query_fail=mysqli_real_escape_string($dbcon,$query_7);
+//            echo "<br>2.".$fail_query="INSERT INTO amz_failed_quries(query) VALUES('$query_fail')";
+//            $conn->runsql($fail_query, $dbcon);
+//        }
+//
+//        if($sub_task_id!=NULL)
+//        {
+//            $query_8="UPDATE user_tasks_ot SET wu_status='1' WHERE team_id='$team_id' AND tasks_id='$task_id' AND sub_task_id='$sub_task_id' AND date LIKE '%$month_modiified_struct_2%' AND wu_status='0' AND ot_status='1'";
+//        }
+//        else
+//        {
+//            $query_8="UPDATE user_tasks_ot SET wu_status='1' WHERE team_id='$team_id' AND tasks_id='$task_id' AND sub_task_id IS NULL AND date LIKE '%$month_modiified_struct_2%' AND wu_status='0'  AND ot_status='1'";
+//        }
+//        $result_update_auto_cf_1_ot = $conn->runsql($query_8, $dbcon);
+//        if(!$result_update_auto_cf_1_ot)
+//        {
+//            $query_fail=mysqli_real_escape_string($dbcon,$query_8);
+//            echo "<br>3.".$fail_query="INSERT INTO amz_failed_quries(query) VALUES('$query_fail')";
+//            $conn->runsql($fail_query, $dbcon);
+//        }
+//        
+//        $query_update_con_fac_1="Update amz_daily_target SET wu_status=1 where s_no='$s_no_1'";
+//        $result_update_con_fac_1 = $conn->runsql($query_update_con_fac_1, $dbcon);
+//        if(!$result_update_con_fac_1)
+//        {
+//            $query_fail=mysqli_real_escape_string($dbcon,$query_update_con_fac_1);
+//            echo "<br>4.".$fail_query="INSERT INTO amz_failed_quries(query) VALUES('$query_fail')";
+//            $conn->runsql($fail_query, $dbcon);
+//        }
+//    }

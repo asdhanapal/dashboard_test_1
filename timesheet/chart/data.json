@@ -1,0 +1,80 @@
+{
+"chart": {
+        "zoomType": "xy",
+        "type": "column",
+        "renderTo": "user_tasks_list"
+},
+"title": {
+        "text": "<?php echo $title!=""?$title:$output['title']?>"
+},
+"subtitle": {
+        "text": "Sub title goes here"
+},
+    "xAxis": [{
+        "categories":[<?php echo $task_list?>],
+        "crosshair": "true"
+    }],
+    "yAxis": [
+    { 
+        "labels": {
+            "format": "{value}",
+            "style": {
+                "color": "Highcharts.getOptions().colors[1]"
+            }
+        },
+        "title": {
+            "text": "<?php echo $x_axis==""?'Work Units (in %)':$x_axis?>",
+            "style": {
+                "color": "Highcharts.getOptions().colors[1]"
+            }
+        },
+        "min":"0",
+        "max":"<?php echo $max?>"
+    }, { 
+        "title": {
+            "text": "<?php echo $x_axis==""?'Work Units (in %)':$x_axis?>",
+            "style": {
+                "color": "Highcharts.getOptions().colors[0]"
+            }
+        },
+        "labels": {
+            "format": "{value}",
+            "style": {
+                "color": "Highcharts.getOptions().colors[0]"
+            }
+        },
+        "opposite": "true",
+        "min":"0",
+        "max":"<?php echo $max?>"
+        
+    }],
+    "tooltip": {
+        "shared": "true"
+    },
+    "legend": {
+        "layout": "vertical",
+        "align": "left",
+        "x": "0",
+        "verticalAlign": "top",
+        "y": 0,
+        "floating": true
+        
+    },
+    "series": [{
+        "name": "Actual",
+        "type": "column",
+        "yAxis": 1,
+        "data": [<?php echo $wu_avg?>],
+        "tooltip": {
+            "valueSuffix": " %"
+        }
+
+    }, {
+        "name": "Target",
+        "type": "spline",
+        "data": [<?php echo $daily_target_temp_in_wu_in_per?>],
+        "tooltip": {
+            "valueSuffix": " %"
+        }
+    }]
+}

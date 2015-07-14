@@ -1,0 +1,63 @@
+#cssmenu ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: auto;
+  position: relative;
+  display: block;
+  height: 36px;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: bold;
+  background: transparent url("../img/off.gif") repeat-x top left;
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+  border-bottom: 4px solid #555555;
+  border-top: 1px solid #919191;
+}
+#cssmenu li {
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+#cssmenu li a {
+  display: block;
+  float: left;
+  color: #8c3a3a;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 15px 0 15px;
+  height: 30px;
+  background: transparent url("../img/divider.gif") no-repeat top right;
+}
+#cssmenu li a:hover, #cssmenu .active {
+  background: transparent url("../img/hover.gif") no-repeat top right;
+  color: #8c3a3a;
+}
+
+
+    table {
+    color: #333333;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 13px;
+}
+#data_header {
+    background: none repeat scroll 0 0 #CCFFCC;
+    color: #000000;
+    font-size: 14px;
+    height: 40px;
+}
+#data_row_odd {
+    background: none repeat scroll 0 0 #E9FFFF;
+    height: 10px;
+}
+#data_row_even {
+    background: none repeat scroll 0 0 #FFFFFF;
+    height: 10px;
+}
+#data_row_odd:hover, #data_row_even:hover {
+    background: none repeat scroll 0 0 #CCFFCC;
+    color: #3366CC;
+    height: 10px;
+}
+

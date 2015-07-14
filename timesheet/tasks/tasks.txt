@@ -1,0 +1,34 @@
+*1.	per Day productity in productivity report
+
+2.	make Avg MC for auth tools
+
+6.	show the non-relese in pro report - no entries for jan month
+
+7.	Show the warning for in complete CF AND USER ENREIES
+
+8.	Chart for users
+
+9.	while changing the con.fac task .... update the wu <Do for all possible actions>
+
+10.	block the previous month tasks
+
+11.	multiple selection in all reports
+
+12.	month/date selection in input
+
+
+UPDATE `amz_daily_target` SET `wu_status`=0
+UPDATE `user_tasks` SET `cf`=NULL,`wu`=NULL,`wu_status`=0
+
+<td><?php echo sectohr($secs+$secs_ot)."&nbsp;(".sectohr($secs)."&nbsp;/&nbsp;".sectohr($secs_ot).")";?></td>
+<td><?php echo $tot_count+$tot_count_ot."&nbsp;(".$tot_count."&nbsp;/&nbsp;".$tot_count_ot.")" ?></td>
+<td><?php echo $tot_work_units+$tot_work_units_ot."&nbsp;(".$tot_work_units."&nbsp;/&nbsp;".$tot_work_units_ot.")"?></td>
+<td><?php echo round(($tot_work_units+$tot_work_units_ot)/$secs*28800,2)."&nbsp;(".round($tot_work_units/$secs*28800,2)."&nbsp;/&nbsp;".round($tot_work_units_ot/$secs*28800,2).")";?></td>
+
+
+	    $tot_time=$tot_time_ot="";
+            $tot_count=$tot_count_ot=0;
+            $secs=$secs_ot=0;
+            $cf=$cf_ot=0;
+            $tot_work_units=$tot_work_units_ot=0.0;
+
